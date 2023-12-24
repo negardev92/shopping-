@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  display: flex;
+}
+
+.Logo {
+  background-color: rgb(151, 48, 247);
+}
+
+/*# sourceMappingURL=style.css.map */
