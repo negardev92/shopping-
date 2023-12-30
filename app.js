@@ -3,16 +3,14 @@ const f = document.getElementById('form');
 const q = document.getElementById('query');
 
 let products = [
-  { id:"1" ,model:"loptob_mac",Color: "blue",price:"2000$", photo:"https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} ,
-  {  id:"2" ,model:"loptob-mac-m2",Color: "red",price:"2500$",photo:"https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-  {  id:"3" ,model:"loptob-mac-m2-Air",Color: "silver",price:"2350$",photo:"https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+  { id:"1" ,model:"laptop_mac",Color: "blue",price:"2000$",photo:"https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg"} ,
+  {  id:"2" ,model:"laptop-mac-m2",Color: "red",price:"2500$",photo:"https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg"},
+  {  id:"3" ,model:"laptop-mac-m2-Air",Color: "silver",price:"2350$",photo:"https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg"}
 ]
-
-    
-
 f.addEventListener('submit', submitted);
+
 function submitted(event) {
-  event.preventDefault();  
+ event.preventDefault();  
 var results = [];
 var toSearch =q.value;
 
@@ -23,20 +21,40 @@ for(var i=0; i<products.length; i++) {
     }
   }
 }
+ 
+ let y=document.getElementById('show-search')
+ let x= results.find(obj => obj.model);
 
- console.log(results);
+ if (y.style.display === 'none') {
+  y.style.display = 'block';
+  y.innerHTML= `<img  src="${x.photo}"/>
+  <p>model: ${x.model}</br>
+   Color: ${x.Color}</br>
+  price: ${x.price}</br></p>
+  `
+
+} else {
+  y.style.display = 'none';
+  
+}
+  
 
 }
 
- products.forEach((product,index)=>{
+
+
+
+
+
+ products.forEach((product)=>{
  let template =
 document.getElementById("demo").innerHTML+= `
 
-<p> <img src="${product.photo}"
+<p> <img src="${product.photo}" />
 model: ${product.model}</br>
  Color: ${product.Color}</br>
 price: ${product.price}</br>
-<button class="btn-add">افزودن به سبد</button>
+<button id=${product.id} class="btn-add" onclick="AddToCart(event) ">افزودن به سبد</button>
 </p>
  
 
@@ -44,7 +62,20 @@ price: ${product.price}</br>
   
  })
  
+ var cart = [];
+ function AddToCart(event) {
+  
+  event.preventDefault();
+  var element = event.target;
+  
+     let x=products.find(obj => obj.id == element.id);
+     cart.push(x);
+    
+     console.log(cart) ;
  
+ }
+ 
+
 
   
 

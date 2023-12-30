@@ -72,6 +72,21 @@ input{
     font-size: 20px;
     cursor: pointer;
     }
+    #show-search{
+width: 600px;
+height: 150px;
+background-color:$bac-part;
+display: none;
+direction: ltr;
+p{
+    direction: ltr;
+    font-size: 20px;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+    }
     }
      .purchase_records{
         position: absolute;
