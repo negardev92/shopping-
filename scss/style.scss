@@ -1,128 +1,123 @@
- $bac-all:#fff;
- $btn-bac:rgb(219, 77, 77);
- $bac-part:rgba(219, 211, 211, 0.384);
+$bac-all: #fff;
+$btn-bac: rgb(219, 77, 77);
+$bac-part: rgba(219, 211, 211, 0.384);
 $border: 2px solid gray;
- $font-f: Verdana, Geneva, Tahoma, sans-serif;
- $font-s:16px;
- $font-s-i:25px;
+$font-f: Verdana, Geneva, Tahoma, sans-serif;
+$font-s: 16px;
+$font-s-i: 25px;
 
- $display-f:flex;
- $width-head:100%;
-$height-head:150px;
+$display-f: flex;
+$width-head: 100%;
+$height-head: 150px;
 
- *{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     direction: rtl;
     font-size: $font-s;
- }
-  body{
+}
+body {
     background-color: $bac-all;
-    font-family:$font-f;
+    font-family: $font-f;
     font-size: $font-s;
     display: $display-f;
-    main{
-         max-width:1400px;
+    main {
+        max-width: 1400px;
     }
-  }
-  
-  .heder{
+}
+
+.heder {
     display: flex;
     position: absolute;
-    width:100%;
-    height:$height-head;
+    width: 100%;
+    height: $height-head;
     border-bottom: $border;
-   
-    .logo{
-        i{
+
+    .logo {
+        i {
             position: absolute;
             padding-right: 20px;
             margin: 10px;
             width: 200px;
-            height:$height-head;
-            font-size:80px;
+            height: $height-head;
+            font-size: 80px;
             color: $btn-bac;
         }
+    }
+    .serche_bar {
+        padding-right: 35px;
+        margin-right: 100px;
+        position: absolute;
+        right: 20px;
+        top: 45px;
 
+        input {
+            width: 600px;
+            height: 50px;
+            padding-right: 45px;
+            padding-left: 5px;
+            font-size: $font-s;
+            outline: none;
+            background-color: $bac-part;
+            border: $border;
+            border-radius: 5px;
+            box-shadow: 5px 5px 0px 0px rgba(128, 128, 128, 0.404);
+        }
+        i {
+            position: absolute;
+            right: 50px;
+            top: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #show-search {
+            width: 600px;
+            height: 150px;
+            background-color: $bac-part;
+            display: none;
+            direction: ltr;
+            p {
+                direction: ltr;
+                font-size: 20px;
+            }
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
     }
-    .serche_bar{
-    padding-right:35px;
-    margin-right:100px;
-    position: absolute;
-    right:20px;
-    top: 45px;
-    
-input{
-    width: 600px;
-    height:50px;
-    padding-right: 45px;
-    padding-left: 5px;
-    font-size: $font-s;
-    outline: none;
-    background-color:$bac-part;
-    border: $border;
-    border-radius: 5px;
-    box-shadow: 5px 5px 0px 0px rgba(128, 128, 128, 0.404);
-    
-}
-    i{
-    position: absolute;
-    right:50px;
-    top: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    }
-    #show-search{
-width: 600px;
-height: 150px;
-background-color:$bac-part;
-display: none;
-direction: ltr;
-p{
-    direction: ltr;
-    font-size: 20px;
-}
-img{
-    width: 50px;
-    height: 50px;
-}
-    }
-    }
-     .purchase_records{
+    .purchase_records {
         position: absolute;
         left: 60px;
         top: 50px;
         color: $btn-bac;
-        a{
+        a {
             color: $btn-bac;
-            i{
+            i {
                 font-size: $font-s-i;
                 cursor: pointer;
-    
             }
         }
-        
-     }
-    
-     .cart{
+    }
+
+    .cart {
         position: absolute;
         left: 25px;
         top: 50px;
         color: $btn-bac;
         gap: 45px;
-        
-       a{
-        color: $btn-bac;
-        i{
+
+        i {
             font-size: $font-s-i;
-           cursor: pointer;
-
+            cursor: pointer;
+            color: $btn-bac;
+            border: none;
+            background-color: transparent;
         }
-       } 
-     }
-  }
+    }
+}
 
-  .filter{
+.filter {
     width: 250px;
     height: 450px;
     border: $border;
@@ -131,133 +126,118 @@ img{
     top: 250px;
     right: 15px;
     display: $display-f;
-        h4{
-            position: absolute;
-            top:15px;
-           right: 10px;
-            
-        }
-        .rest-btn{
-            position: absolute;
-             top:15px;
-            right: 170px;
-             border: none;
-            cursor: pointer;
-            color: $btn-bac;
-            font-size:18px ;
-        }
-        form{
-            #vehicle1{
-                position: absolute;
-                top:110px;
-               right: 5px;
-            }
-            #vehicle2{
-                position: absolute;
-                top:108px;
-               right: 25px;
-            }
-            #vehicle3{
-                position: absolute;
-                top:65px;
-               right: 5px;
-            }
-            #vehicle4{
-                position: absolute;
-                top:62px;
-               right: 25px; 
-            }
-            
-        }
-    
-        .btn-filter{
-            position: absolute;
-            top:220px;
-            right: 20px;
-            background-color: red;
-            padding: 12px;
-            width:200px;
-            color: $bac-all;
-            border: none;
-            border-radius: 20px;
-            padding: 15px;
-            cursor: pointer;
-        }
-        
-
+    h4 {
+        position: absolute;
+        top: 15px;
+        right: 10px;
     }
-  
+    .rest-btn {
+        position: absolute;
+        top: 15px;
+        right: 170px;
+        border: none;
+        cursor: pointer;
+        color: $btn-bac;
+        font-size: 18px;
+    }
+    form {
+        #vehicle1 {
+            position: absolute;
+            top: 110px;
+            right: 5px;
+        }
+        #vehicle2 {
+            position: absolute;
+            top: 108px;
+            right: 25px;
+        }
+        #vehicle3 {
+            position: absolute;
+            top: 65px;
+            right: 5px;
+        }
+        #vehicle4 {
+            position: absolute;
+            top: 62px;
+            right: 25px;
+        }
+    }
 
-  .sort{
+    .btn-filter {
+        position: absolute;
+        top: 220px;
+        right: 20px;
+        background-color: red;
+        padding: 12px;
+        width: 200px;
+        color: $bac-all;
+        border: none;
+        border-radius: 20px;
+        padding: 15px;
+        cursor: pointer;
+    }
+}
+
+.sort {
     position: absolute;
     width: 700px;
     height: 40px;
-     right: 280px;
-    top:250px;
+    right: 280px;
+    top: 250px;
     display: $display-f;
-    i{
+    i {
         width: 100px;
         height: 100px;
     }
-    h6{
+    h6 {
         position: absolute;
-       right:20px;
-        top:2px; 
-        margin-left:45px; 
+        right: 20px;
+        top: 2px;
+        margin-left: 45px;
     }
-    ul{
+    ul {
         display: $display-f;
         margin-right: 60px;
         list-style: none;
-         li{
+        li {
             margin-right: 35px;
             cursor: pointer;
-         }
-         li:hover{
-            color:$btn-bac;
-         }
+        }
+        li:hover {
+            color: $btn-bac;
+        }
     }
+}
 
-  }
-
-  #demo{
+#products-show {
     position: absolute;
-    right:280px;
-    top:300px;
+    right: 280px;
+    top: 300px;
     background-color: $bac-part;
     display: flex;
-    flex-wrap:  wrap;
-    
-    
-   
-   
+    flex-wrap: wrap;
 
-    p{
-       direction: ltr;
-        padding-left:45px;
+    p {
+        direction: ltr;
+        padding-left: 45px;
         width: 300px;
         border: $border;
         align-items: center;
-        justify-content:center;
-        margin:15px ;
-        
-  
-
+        justify-content: center;
+        margin: 15px;
     }
-    img{
+    img {
         width: 200px;
         height: 200px;
         display: flex;
         margin: 20px;
         align-items: center;
-        justify-content:center;
-        
-        
+        justify-content: center;
     }
-    .btn-add{
+    .btn-add {
         background-color: red;
         padding: 12px;
-        width:200px;
+        width: 200px;
         color: $bac-all;
         border: none;
         border-radius: 20px;
@@ -265,5 +245,59 @@ img{
         cursor: pointer;
         margin-top: 5px;
     }
-  }
-  
+}
+#cart-show {
+    position: absolute;
+    background-color: $bac-part;
+    width: 300px;
+    max-height: 1000px;
+    left: 2px;
+    z-index: 2px;
+    top: 150px;
+    display: none;
+    .cart-empty {
+        color: $btn-bac;
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    button {
+        background-color: transparent;
+        color: $btn-bac;
+        padding: 5px;
+        border: none;
+        font-size: large;
+    }
+    h4 {
+        border-bottom: red 2px solid;
+        padding-bottom: 1px;
+    }
+    .cart-display {
+        direction: ltr;
+        width: 300px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin-top: 45px;
+        }
+        p {
+            direction: ltr;
+            font-size: 14px;
+        }
+        .btn-remove {
+            position: absolute;
+
+            background-color: $btn-bac;
+            padding: 5px;
+            width: 200px;
+            color: $bac-all;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+}

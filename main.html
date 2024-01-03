@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./../dist/css/style.css">
-    <title>Dgikala</title>
-    
-</head>
-<body>
-    <div class="main">
-        <div class="heder">
-        <div class="logo"><i class="fa-brands fa-pied-piper-alt"></i></div>
-        <div class="serche_bar">
-            <form role="search" id="form">
-                <input type="search" id="query"name="q" placeholder="جستجو" autocomplete="off" aria-label="Search through site content">
-                <button>
-                 <i class="fa-solid fa-magnifying-glass"></i>
-                </button></form>
-                <div id="show-search"></div>
-       </div>
-        <div class="purchase_records"><a href="./../tests/purchase_records/purchase-records.html"><i class="fa-solid fa-shop"></i></a></div>
-        <div class="cart"><a href="./../tests/cart/cart.html"> <i class="fa-solid fa-bag-shopping"></i></a></div>
-        </div>
-        
-        <div class="filter">
-            
-            <form>
-                <h4>فیلترها </h4>
-                <input type="reset" value="حذف فیلتر" class="rest-btn">
-                <input type="checkbox" id="vehicle1" name="vehicle1" >
-                <label for="vehicle1"  id="vehicle2"> اصل </label><br>
-                <input type="checkbox" id="vehicle3" name="vehicle2">
-                <label for="vehicle2"  id="vehicle4"> موجود در انبار</label><br>
-                <button class="btn-filter">تایید </button>
-            </form>
-        </div>
-        <div class="sort">
-            <i class="fa-solid fa-list"></i>
-            <h6>مرتب سازی براساس:</h6>
-            <ul>
-                <li>جدیدترین </li>
-                <li>پرفروش ترین</li>
-                <li>سریع ترین ارسال</li>
-                <li>پیشنهاد خریداران</li>
-            </ul>
-        </div>
-        <div class="products">
-            <div id="demo">
-                
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./../dist/css/style.css">
+        <title>Dgikala</title>
+
+    </head>
+    <body>
+        <div class="main">
+            <div class="heder">
+                <div class="logo"><i
+                        class="fa-brands fa-pied-piper-alt"></i></div>
+                <div class="serche_bar">
+                    <form role="search" id="form">
+                        <input type="search" id="query" name="q"
+                            placeholder="جستجو" autocomplete="off"
+                            aria-label="Search through site content">
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button></form>
+                    <div id="show-search"></div>
+                </div>
+                <div class="purchase_records"><a
+                        href="./../tests/purchase_records/purchase-records.html"><i
+                            class="fa-solid fa-shop"></i></a></div>
+                <div class="cart"><i class="fa-solid fa-bag-shopping"></i></div>
             </div>
+            <div class="filter">
+                <form>
+                    <h4>فیلترها </h4>
+                    <input type="reset" value="حذف فیلتر" class="rest-btn">
+                    <input type="checkbox" id="vehicle1" name="vehicle1">
+                    <label for="vehicle1" id="vehicle2"> اصل </label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle2">
+                    <label for="vehicle2" id="vehicle4"> موجود در
+                        انبار</label><br>
+                    <button class="btn-filter">تایید </button>
+                </form>
+            </div>
+            <div class="sort">
+                <i class="fa-solid fa-list"></i>
+                <h6>مرتب سازی براساس:</h6>
+                <ul>
+                    <li>جدیدترین </li>
+                    <li>پرفروش ترین</li>
+                    <li>سریع ترین ارسال</li>
+                    <li>پیشنهاد خریداران</li>
+                </ul>
+            </div>
+            <div class="products">
+                <div id="products-show">
+
+                </div>
+                <div id="cart-show">
+
+                    <button class="btn-close" onclick="close_cart()"><i
+                            class="fa-solid fa-xmark"></i></button><h4>سبد خرید
+                    </h4>
+                </div>
+
+            </div>
+
         </div>
-    </div>
-    <script src="./app.js"></script>
-</body>
+        <script src="./app.js "></script>
+    </body>
 </html>
