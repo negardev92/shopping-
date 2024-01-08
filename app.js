@@ -8,7 +8,7 @@ let products = [
     Color: "blue",
     price: "2000$",
     photo:
-      "https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg",
+      "../tests/pic/dc9KyLMoi.png",
   },
   {
     id: "2",
@@ -16,7 +16,7 @@ let products = [
     Color: "red",
     price: "2500$",
     photo:
-      "https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg",
+    "../tests/pic/dc9KyLMoi.png",
   },
   {
     id: "3",
@@ -24,13 +24,27 @@ let products = [
     Color: "silver",
     price: "2350$",
     photo:
-      "https://colorworksnursery.com/images/thumbs/0000024_apple-macbook-pro-13-inch_550.jpeg",
+    "../tests/pic/dc9KyLMoi.png",
   },
 ];
 
-f.addEventListener("submit", submitted);
 
-function submitted(event) {
+function showproducts(){
+  products.forEach((product) => {
+    document.getElementById("products-show").innerHTML += `
+    
+    <p> <img src="${product.photo}" />
+    model: ${product.model}</br>
+     Color: ${product.Color}</br>
+    price: ${product.price}
+    <button id=${product.id} class="btn-add" onclick="AddToCart(event) ">+</button>
+    </p>
+    `;
+    });
+}
+showproducts()
+f.addEventListener("submit", serch);
+function serch(event) {
   event.preventDefault();
   var results = [];
   var toSearch = q.value;
@@ -42,42 +56,44 @@ function submitted(event) {
       }
     }
   }
-
-  let y = document.getElementById("show-search");
-  let x = results.find((obj) => obj.model);
-
-  if (y.style.display === "none") {
-    y.style.display = "block";
-    y.innerHTML = `<img  src="${x.photo}"/>
-  <p>model: ${x.model}</br>
-   Color: ${x.Color}</br>
-  price: ${x.price}</br></p>
+  
+  let showsearch = document.getElementById("show-search");
+  let findresults = results.find((obj) => obj.model);
+  if (showsearch.style.display === "none") {
+    showsearch.style.display = "block";
+    showsearch.innerHTML = `<img  src="${findresults.photo}"/>
+  <p>model: ${findresults.model}</br>
+   Color: ${findresults.Color}</br>
+  price: ${findresults.price}</br></p>
   `;
+  
+  console.log(results);
   } else {
-    y.style.display = "none";
+    showsearch.style.display = "none";
   }
 }
 
-products.forEach((product) => {
-  let template = (document.getElementById("products-show").innerHTML += `
 
-<p> <img src="${product.photo}" />
-model: ${product.model}</br>
- Color: ${product.Color}</br>
-price: ${product.price}</br>
-<button id=${product.id} class="btn-add" onclick="AddToCart(event) ">افزودن به سبد</button>
-</p>
-`);
-});
+
+
 
 var cart = [];
 function AddToCart(event) {
   event.preventDefault();
   var element = event.target;
-
-  let x = products.find((obj) => obj.id == element.id);
-  cart.push(x);
-  return cart;
+  let findprodcut = products.find((obj) => obj.id == element.id);
+  let isexists = products.find((obj) => obj.id == findprodcut.id);
+   item=0;
+  if(isexists){
+    
+    
+  }
+  else{
+    console.log('vojod darad')
+  }
+  cart.push(findprodcut);
+  
+  console.table(cart)
 }
 
 let cartbtn = document.querySelector(".cart");
